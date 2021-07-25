@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainbox" class="mainbox">
+        <div id="box" class="box">
+            <div class="box1">
+                <span class="span1"><b>50</b></span>
+                <span class="span2"><b>150</b></span>
+                <span class="span3"><b>250</b></span>
+                <span class="span4"><b>350</b></span>
+            </div>
+            <div class="box2">
+                <span class="span1"><b>10</b></span>
+                <span class="span2"><b>110</b></span>
+                <span class="span3"><b>210</b></span>
+                <span class="span4"><b>310</b></span>
+            </div>
+        </div>
+        <button class="spin" onclick="myfunction()">SPIN</button>
+        <!-- <audio class="spin">
+            <source src="myaudio.wav" type="audio/mpeg">
+        </audio> -->
+    </div>
+    <script src="confetti.js"></script>
+    <script>
+        function myfunction(){
+
+            var x = 1024;//min value
+            var y = 9999;//min value
+
+            var deg = Math.floor(Math.random() * (x - y)) + y;
+
+            document.getElementById('box').style.transform = "rotate("+deg+"deg)";
+            var audio = new Audio('myaudio.wav');
+                audio.play();
+            var element = document.getElementById('mainbox');
+            element.classList.remove('animate');
+            setTimeout(function spin(){ 
+                    confetti.start()
+            },5000); //5000 = 5second
+
+        }
+
+
+
+    </script>
+</body>
+</html>
