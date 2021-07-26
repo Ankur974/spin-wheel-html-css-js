@@ -1,4 +1,4 @@
-*{
+ *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -9,8 +9,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    height: 90vh;
+    /* overflow: hidden; */
     background: #F44336;
     background-size: cover;
 }
@@ -118,5 +118,24 @@ span b{
     animation: animateArrow 0.7s ease infinite;
 }
 @keyframes aniamteArrow{
+
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    float: left;
+    justify-content: center;
+    border: 2px solid black;
+    background-color: brown;
+    margin-left: 50px;
+}
+li{
+    padding: 15px;
+}
+.btn{
+    background-color: chartreuse;
+    margin: auto 203px;
+    font-size: 20px;
 
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div id="mainbox" class="mainbox">
         <div id="box" class="box">
@@ -23,33 +25,54 @@
                 <span class="span4"><b>310</b></span>
             </div>
         </div>
+        <div class="choose">
+            <ul>
+                <li>50</li>
+                <li>150</li>
+                <li>150</li>
+                <li>150</li>
+                <li>150</li>
+                <li>150</li>
+                <li>150</li>
+            </ul>
+        </div>
+        <div>
+            <button class="btn">Select Number</button>
+        </div>
         <button class="spin" onclick="myfunction()">SPIN</button>
         <!-- <audio class="spin">
             <source src="myaudio.wav" type="audio/mpeg">
         </audio> -->
     </div>
+
     <script src="confetti.js"></script>
     <script>
-        function myfunction(){
+        function myfunction() {
 
             var x = 1024;//min value
             var y = 9999;//min value
 
             var deg = Math.floor(Math.random() * (x - y)) + y;
 
-            document.getElementById('box').style.transform = "rotate("+deg+"deg)";
+            document.getElementById('box').style.transform = "rotate(" + deg + "deg)";
             var audio = new Audio('myaudio.wav');
-                audio.play();
+            audio.play();
             var element = document.getElementById('mainbox');
             element.classList.remove('animate');
-            setTimeout(function spin(){ 
-                    confetti.start()
-            },5000); //5000 = 5second
+            setTimeout(function spin() {
+                confetti.start()
+            }, 6000); //6000 = 6second
+            setTimeout(function spin() {
+                confetti.stop()
+            }, 8000); // 8000 is time that after 8 second stop the confetti ( 8000 = 5 sec)
 
+        start();
+        stop();
         }
 
 
 
     </script>
 </body>
+
 </html>
